@@ -30,6 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnStop = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnStart = new System.Windows.Forms.Button();
@@ -43,7 +44,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.btnStop = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -52,6 +54,8 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.groupBox1.Controls.Add(this.button5);
+            this.groupBox1.Controls.Add(this.button4);
             this.groupBox1.Controls.Add(this.btnStop);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.pictureBox1);
@@ -64,11 +68,22 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
+            // btnStop
+            // 
+            this.btnStop.BackColor = System.Drawing.Color.Tan;
+            this.btnStop.Location = new System.Drawing.Point(259, 372);
+            this.btnStop.Name = "btnStop";
+            this.btnStop.Size = new System.Drawing.Size(129, 44);
+            this.btnStop.TabIndex = 4;
+            this.btnStop.Text = "STOP";
+            this.btnStop.UseVisualStyleBackColor = false;
+            this.btnStop.Click += new System.EventHandler(this.button1_Click_1);
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Times New Roman", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(126, 37);
+            this.label2.Location = new System.Drawing.Point(179, 37);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(84, 15);
             this.label2.TabIndex = 3;
@@ -211,16 +226,27 @@
             // 
             this.timer1.Interval = 1000;
             // 
-            // btnStop
+            // button4
             // 
-            this.btnStop.BackColor = System.Drawing.Color.Tan;
-            this.btnStop.Location = new System.Drawing.Point(259, 372);
-            this.btnStop.Name = "btnStop";
-            this.btnStop.Size = new System.Drawing.Size(129, 44);
-            this.btnStop.TabIndex = 4;
-            this.btnStop.Text = "STOP";
-            this.btnStop.UseVisualStyleBackColor = false;
-            this.btnStop.Click += new System.EventHandler(this.button1_Click_1);
+            this.button4.BackColor = System.Drawing.Color.LightCoral;
+            this.button4.Location = new System.Drawing.Point(87, 503);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(142, 48);
+            this.button4.TabIndex = 6;
+            this.button4.Text = "SHORT BREAK";
+            this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // button5
+            // 
+            this.button5.BackColor = System.Drawing.Color.LightCoral;
+            this.button5.Location = new System.Drawing.Point(235, 503);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(129, 48);
+            this.button5.TabIndex = 7;
+            this.button5.Text = "LONG BREAK";
+            this.button5.UseVisualStyleBackColor = false;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // pomodoro
             // 
@@ -258,6 +284,8 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Button btnStop;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button5;
     }
 }
 

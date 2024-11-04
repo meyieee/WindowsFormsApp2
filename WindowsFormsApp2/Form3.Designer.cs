@@ -28,7 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.button5 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button1 = new System.Windows.Forms.Button();
@@ -41,7 +45,7 @@
             this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.label3 = new System.Windows.Forms.Label();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.button3 = new System.Windows.Forms.Button();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -50,6 +54,8 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.groupBox1.Controls.Add(this.button5);
+            this.groupBox1.Controls.Add(this.button4);
             this.groupBox1.Controls.Add(this.button3);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.pictureBox1);
@@ -60,6 +66,37 @@
             this.groupBox1.Size = new System.Drawing.Size(456, 607);
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
+            // 
+            // button5
+            // 
+            this.button5.BackColor = System.Drawing.Color.LightCoral;
+            this.button5.Location = new System.Drawing.Point(237, 484);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(117, 48);
+            this.button5.TabIndex = 7;
+            this.button5.Text = "POMODORO";
+            this.button5.UseVisualStyleBackColor = false;
+            // 
+            // button4
+            // 
+            this.button4.BackColor = System.Drawing.Color.LightCoral;
+            this.button4.Location = new System.Drawing.Point(84, 484);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(125, 48);
+            this.button4.TabIndex = 6;
+            this.button4.Text = "SHORT BREAK";
+            this.button4.UseVisualStyleBackColor = false;
+            // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.Color.Tan;
+            this.button3.Location = new System.Drawing.Point(269, 368);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(134, 44);
+            this.button3.TabIndex = 4;
+            this.button3.Text = "STOP";
+            this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // label2
             // 
@@ -91,6 +128,7 @@
             this.button1.TabIndex = 1;
             this.button1.Text = "START";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label1
             // 
@@ -198,15 +236,10 @@
             this.checkBox1.Text = "Make assignment";
             this.checkBox1.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // timer1
             // 
-            this.button3.BackColor = System.Drawing.Color.Tan;
-            this.button3.Location = new System.Drawing.Point(269, 368);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(134, 44);
-            this.button3.TabIndex = 4;
-            this.button3.Text = "STOP";
-            this.button3.UseVisualStyleBackColor = false;
+            this.timer1.Interval = 1000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // Form3
             // 
@@ -217,6 +250,7 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Name = "Form3";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form3";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -243,5 +277,8 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button5;
     }
 }

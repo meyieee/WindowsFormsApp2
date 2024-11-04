@@ -34,7 +34,7 @@ namespace WindowsFormsApp2
 
         private void button1_Click(object sender, EventArgs e)
         {
-            seconds = 600; // Set timer for 10 minutes (600 seconds)
+            seconds = 300; // Set timer for 10 minutes (600 seconds)
             TimeSpan time = TimeSpan.FromSeconds(seconds);
             label1.Text = time.ToString(@"mm\:ss"); // Initialize label with 10:00
             timer1.Start(); // Start the timer
@@ -63,6 +63,16 @@ namespace WindowsFormsApp2
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button5_Click(object sender, EventArgs e)
         {
 
         }

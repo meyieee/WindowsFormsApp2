@@ -84,5 +84,19 @@ namespace WindowsFormsApp2
             timer1.Stop();
 
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Form2 longBreakForm = new Form2();
+            // Menampilkan Form2 sebagai form baru
+            longBreakForm.Show();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            Form3 shortBreakForm = new Form3();
+            // Menampilkan Form3 sebagai form baru
+            shortBreakForm.Show();
+        }
     }
 }
