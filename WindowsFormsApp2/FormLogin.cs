@@ -16,5 +16,19 @@ namespace WindowsFormsApp2
         {
             InitializeComponent();
         }
+
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+            // Membuka Form Pomodoro setelah login
+            pomodoro pomodoroForm = new pomodoro();
+            this.Hide(); // Menyembunyikan FormLogin setelah login
+            pomodoroForm.ShowDialog(); // Menampilkan Form Pomodoro
+            this.Close(); // Menutup FormLogin setelah Form Pomodoro ditutup
+        }
+
+        private void FormLogin_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -16,7 +16,7 @@ namespace WindowsFormsApp2
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new pomodoro());
+            Application.Run(new FormLogin()); // Mengatur FormLogin sebagai form utama
         }
     }
 }
