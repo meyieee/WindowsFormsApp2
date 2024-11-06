@@ -70,9 +70,9 @@
             // button5
             // 
             this.button5.BackColor = System.Drawing.Color.LightCoral;
-            this.button5.Location = new System.Drawing.Point(237, 484);
+            this.button5.Location = new System.Drawing.Point(269, 484);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(117, 48);
+            this.button5.Size = new System.Drawing.Size(134, 48);
             this.button5.TabIndex = 7;
             this.button5.Text = "POMODORO";
             this.button5.UseVisualStyleBackColor = false;
@@ -80,9 +80,9 @@
             // button4
             // 
             this.button4.BackColor = System.Drawing.Color.LightCoral;
-            this.button4.Location = new System.Drawing.Point(84, 484);
+            this.button4.Location = new System.Drawing.Point(61, 484);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(125, 48);
+            this.button4.Size = new System.Drawing.Size(148, 48);
             this.button4.TabIndex = 6;
             this.button4.Text = "SHORT BREAK";
             this.button4.UseVisualStyleBackColor = false;
@@ -134,11 +134,11 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(91, 223);
+            this.label1.Location = new System.Drawing.Point(124, 233);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(118, 90);
+            this.label1.Size = new System.Drawing.Size(225, 90);
             this.label1.TabIndex = 0;
-            this.label1.Text = "00";
+            this.label1.Text = "10:00";
             // 
             // groupBox2
             // 
@@ -155,12 +155,13 @@
             this.groupBox2.Size = new System.Drawing.Size(456, 607);
             this.groupBox2.TabIndex = 4;
             this.groupBox2.TabStop = false;
+            this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Times New Roman", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(142, 37);
+            this.label5.Location = new System.Drawing.Point(184, 37);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(71, 15);
             this.label5.TabIndex = 4;
@@ -252,6 +253,7 @@
             this.Name = "Form3";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form3";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
