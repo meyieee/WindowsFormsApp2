@@ -37,18 +37,24 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnStart = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
-            this.checkBox3 = new System.Windows.Forms.CheckBox();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.todolistView = new System.Windows.Forms.DataGridView();
+            this.Savebtn = new System.Windows.Forms.Button();
+            this.Deletebtn = new System.Windows.Forms.Button();
+            this.Editbutton = new System.Windows.Forms.Button();
+            this.newButton = new System.Windows.Forms.Button();
+            this.titleText = new System.Windows.Forms.Label();
+            this.descriptionText = new System.Windows.Forms.Label();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.groupBox2.SuspendLayout();
+            this.groupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.todolistView)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -61,9 +67,9 @@
             this.groupBox1.Controls.Add(this.pictureBox1);
             this.groupBox1.Controls.Add(this.btnStart);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(328, 63);
+            this.groupBox1.Location = new System.Drawing.Point(471, 60);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(456, 607);
+            this.groupBox1.Size = new System.Drawing.Size(456, 838);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
@@ -144,109 +150,147 @@
             this.label1.Text = "25:00";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
-            // groupBox2
-            // 
-            this.groupBox2.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.groupBox2.Controls.Add(this.label5);
-            this.groupBox2.Controls.Add(this.button2);
-            this.groupBox2.Controls.Add(this.label4);
-            this.groupBox2.Controls.Add(this.checkBox3);
-            this.groupBox2.Controls.Add(this.checkBox2);
-            this.groupBox2.Controls.Add(this.label3);
-            this.groupBox2.Controls.Add(this.checkBox1);
-            this.groupBox2.Location = new System.Drawing.Point(1116, 63);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(456, 607);
-            this.groupBox2.TabIndex = 2;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = " ";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Times New Roman", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(142, 37);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(71, 15);
-            this.label5.TabIndex = 4;
-            this.label5.Text = "TASK LIST";
-            // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.Color.MistyRose;
-            this.button2.Location = new System.Drawing.Point(26, 444);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(285, 43);
-            this.button2.TabIndex = 5;
-            this.button2.Text = "ADD ITEM";
-            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(22, 326);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(116, 19);
-            this.label4.TabIndex = 4;
-            this.label4.Text = "COMPLETED";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
-            // 
-            // checkBox3
-            // 
-            this.checkBox3.AutoSize = true;
-            this.checkBox3.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox3.Location = new System.Drawing.Point(26, 194);
-            this.checkBox3.Margin = new System.Windows.Forms.Padding(7);
-            this.checkBox3.Name = "checkBox3";
-            this.checkBox3.Padding = new System.Windows.Forms.Padding(10);
-            this.checkBox3.Size = new System.Drawing.Size(229, 49);
-            this.checkBox3.TabIndex = 3;
-            this.checkBox3.Text = "Make assignment";
-            this.checkBox3.UseVisualStyleBackColor = true;
-            // 
-            // checkBox2
-            // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox2.Location = new System.Drawing.Point(26, 152);
-            this.checkBox2.Margin = new System.Windows.Forms.Padding(7);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Padding = new System.Windows.Forms.Padding(10);
-            this.checkBox2.Size = new System.Drawing.Size(229, 49);
-            this.checkBox2.TabIndex = 2;
-            this.checkBox2.Text = "Make assignment";
-            this.checkBox2.UseVisualStyleBackColor = true;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(22, 85);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(61, 19);
-            this.label3.TabIndex = 1;
-            this.label3.Text = "TO DO";
-            // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox1.Location = new System.Drawing.Point(26, 107);
-            this.checkBox1.Margin = new System.Windows.Forms.Padding(7);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Padding = new System.Windows.Forms.Padding(10);
-            this.checkBox1.Size = new System.Drawing.Size(229, 49);
-            this.checkBox1.TabIndex = 0;
-            this.checkBox1.Text = "Make assignment";
-            this.checkBox1.UseVisualStyleBackColor = true;
-            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
-            // 
             // timer1
             // 
             this.timer1.Interval = 1000;
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.groupBox3.Controls.Add(this.todolistView);
+            this.groupBox3.Controls.Add(this.Savebtn);
+            this.groupBox3.Controls.Add(this.Deletebtn);
+            this.groupBox3.Controls.Add(this.Editbutton);
+            this.groupBox3.Controls.Add(this.newButton);
+            this.groupBox3.Controls.Add(this.titleText);
+            this.groupBox3.Controls.Add(this.descriptionText);
+            this.groupBox3.Controls.Add(this.textBox2);
+            this.groupBox3.Controls.Add(this.textBox1);
+            this.groupBox3.Controls.Add(this.label6);
+            this.groupBox3.Controls.Add(this.label7);
+            this.groupBox3.Controls.Add(this.label8);
+            this.groupBox3.Location = new System.Drawing.Point(927, 60);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(557, 838);
+            this.groupBox3.TabIndex = 5;
+            this.groupBox3.TabStop = false;
+            // 
+            // todolistView
+            // 
+            this.todolistView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.todolistView.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.todolistView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.todolistView.Location = new System.Drawing.Point(6, 305);
+            this.todolistView.Name = "todolistView";
+            this.todolistView.RowHeadersWidth = 51;
+            this.todolistView.RowTemplate.Height = 24;
+            this.todolistView.Size = new System.Drawing.Size(545, 506);
+            this.todolistView.TabIndex = 13;
+            // 
+            // Savebtn
+            // 
+            this.Savebtn.BackColor = System.Drawing.Color.PeachPuff;
+            this.Savebtn.Location = new System.Drawing.Point(418, 249);
+            this.Savebtn.Name = "Savebtn";
+            this.Savebtn.Size = new System.Drawing.Size(133, 50);
+            this.Savebtn.TabIndex = 12;
+            this.Savebtn.Text = "Save";
+            this.Savebtn.UseVisualStyleBackColor = false;
+            this.Savebtn.Click += new System.EventHandler(this.Savebtn_Click);
+            // 
+            // Deletebtn
+            // 
+            this.Deletebtn.BackColor = System.Drawing.Color.PeachPuff;
+            this.Deletebtn.Location = new System.Drawing.Point(279, 249);
+            this.Deletebtn.Name = "Deletebtn";
+            this.Deletebtn.Size = new System.Drawing.Size(133, 50);
+            this.Deletebtn.TabIndex = 11;
+            this.Deletebtn.Text = "Delete\r\n";
+            this.Deletebtn.UseVisualStyleBackColor = false;
+            this.Deletebtn.Click += new System.EventHandler(this.Deletebtn_Click);
+            // 
+            // Editbutton
+            // 
+            this.Editbutton.BackColor = System.Drawing.Color.PeachPuff;
+            this.Editbutton.Location = new System.Drawing.Point(145, 249);
+            this.Editbutton.Name = "Editbutton";
+            this.Editbutton.Size = new System.Drawing.Size(133, 50);
+            this.Editbutton.TabIndex = 10;
+            this.Editbutton.Text = "Edit";
+            this.Editbutton.UseVisualStyleBackColor = false;
+            this.Editbutton.Click += new System.EventHandler(this.Editbutton_Click);
+            // 
+            // newButton
+            // 
+            this.newButton.BackColor = System.Drawing.Color.PeachPuff;
+            this.newButton.Location = new System.Drawing.Point(6, 249);
+            this.newButton.Name = "newButton";
+            this.newButton.Size = new System.Drawing.Size(133, 50);
+            this.newButton.TabIndex = 9;
+            this.newButton.Text = "New";
+            this.newButton.UseVisualStyleBackColor = false;
+            this.newButton.Click += new System.EventHandler(this.newButton_Click);
+            // 
+            // titleText
+            // 
+            this.titleText.Font = new System.Drawing.Font("Leelawadee", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.titleText.Location = new System.Drawing.Point(7, 126);
+            this.titleText.Name = "titleText";
+            this.titleText.Size = new System.Drawing.Size(519, 23);
+            this.titleText.TabIndex = 8;
+            this.titleText.Text = "TITLE:";
+            // 
+            // descriptionText
+            // 
+            this.descriptionText.Font = new System.Drawing.Font("Leelawadee", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.descriptionText.Location = new System.Drawing.Point(7, 186);
+            this.descriptionText.Name = "descriptionText";
+            this.descriptionText.Size = new System.Drawing.Size(525, 27);
+            this.descriptionText.TabIndex = 7;
+            this.descriptionText.Text = "DESCRIPTION:";
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(6, 216);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(516, 22);
+            this.textBox2.TabIndex = 6;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(6, 152);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(516, 22);
+            this.textBox1.TabIndex = 5;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Times New Roman", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(230, 37);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(71, 15);
+            this.label6.TabIndex = 4;
+            this.label6.Text = "TASK LIST";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(22, 326);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(0, 19);
+            this.label7.TabIndex = 4;
+            // 
+            // label8
+            // 
+            this.label8.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(6, 79);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(520, 47);
+            this.label8.TabIndex = 1;
+            this.label8.Text = "TO DO";
+            this.label8.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // pomodoro
             // 
@@ -254,7 +298,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Info;
             this.ClientSize = new System.Drawing.Size(1902, 1153);
-            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox1);
             this.Name = "pomodoro";
             this.Text = "Form1";
@@ -263,8 +307,9 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.todolistView)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -275,18 +320,23 @@
         private System.Windows.Forms.Button btnStart;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.CheckBox checkBox3;
-        private System.Windows.Forms.CheckBox checkBox2;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Button btnStop;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.DataGridView todolistView;
+        private System.Windows.Forms.Button Savebtn;
+        private System.Windows.Forms.Button Deletebtn;
+        private System.Windows.Forms.Button Editbutton;
+        private System.Windows.Forms.Button newButton;
+        private System.Windows.Forms.Label titleText;
+        private System.Windows.Forms.Label descriptionText;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label8;
     }
 }
 

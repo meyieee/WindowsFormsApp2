@@ -63,5 +63,46 @@ namespace WindowsFormsApp2
         {
 
         }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void newButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Deletebtn_Click(object sender, EventArgs e)
+        {
+            //    try
+            //    {
+
+            //    }
+            //    catch { Exception e}
+        }
+
+        private void Editbutton_Click(object sender, EventArgs e)
+            {
+
+            }
+
+            private void Savebtn_Click(object sender, EventArgs e)
+            {
+
+            }
+
+
+            private void Form3_Load(object sender, EventArgs e)
+            {
+                ;
+
+            }
+        }
     }
-}

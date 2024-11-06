@@ -75,8 +75,17 @@ namespace WindowsFormsApp2
         {
         }
 
+        DataTable todoList = new DataTable();
+        bool isEditing = false;
+
         private void pomodoro_Load(object sender, EventArgs e)
         {
+            //Create columns
+            todoList.Columns.Add("Title");
+            todoList.Columns.Add("Description");
+
+            todolistView.DataSource = todoList;
+
         }
 
         private void button1_Click_1(object sender, EventArgs e)
@@ -98,5 +107,71 @@ namespace WindowsFormsApp2
             // Menampilkan Form3 sebagai form baru
             shortBreakForm.Show();
         }
+
+        private void newButton_Click(object sender, EventArgs e)
+        {
+            titleText.Text = "";
+            descriptionText.Text = "";
+
+        }
+
+        private void Editbutton_Click(object sender, EventArgs e)
+        {
+            isEditing = true;
+            // Mengambil data dari baris yang dipilih untuk Title dan Description
+            titleText.Text = todoList.Rows[todolistView.CurrentCell.RowIndex]["Title"].ToString();
+            descriptionText.Text = todoList.Rows[todolistView.CurrentCell.RowIndex]["Description"].ToString();
+        }
+
+        private void Deletebtn_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                todoList.Rows[todolistView.CurrentCell.RowIndex].Delete();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error: " + ex);
+            }
+
+
+        }
+
+        private void Savebtn_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(titleText.Text) || string.IsNullOrWhiteSpace(descriptionText.Text))
+            {
+                MessageBox.Show("Both Title and Description are required.", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+
+            if (isEditing)
+            {
+                // Update baris yang sedang diedit
+                todoList.Rows[todolistView.CurrentCell.RowIndex]["Title"] = titleText.Text;
+                todoList.Rows[todolistView.CurrentCell.RowIndex]["Description"] = descriptionText.Text;
+            }
+            else
+            {
+                // Tambahkan baris baru ke DataTable
+                todoList.Rows.Add(titleText.Text, descriptionText.Text);
+            }
+
+            // Reset text fields
+            titleText.Text = "";
+            descriptionText.Text = "";
+            isEditing = false;
+
+            RefreshDataGridView();
+        }
+
+        private void RefreshDataGridView()
+        {
+            todolistView.DataSource = null; // Hapus DataSource sementara
+            todolistView.DataSource = todoList; // Set ulang DataSource
+        }
+
+
     }
 }

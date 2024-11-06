@@ -37,18 +37,9 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
-            this.checkBox3 = new System.Windows.Forms.CheckBox();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -61,7 +52,7 @@
             this.groupBox1.Controls.Add(this.pictureBox1);
             this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(328, 63);
+            this.groupBox1.Location = new System.Drawing.Point(687, 60);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(456, 607);
             this.groupBox1.TabIndex = 3;
@@ -140,103 +131,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "10:00";
             // 
-            // groupBox2
-            // 
-            this.groupBox2.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.groupBox2.Controls.Add(this.label5);
-            this.groupBox2.Controls.Add(this.button2);
-            this.groupBox2.Controls.Add(this.label4);
-            this.groupBox2.Controls.Add(this.checkBox3);
-            this.groupBox2.Controls.Add(this.checkBox2);
-            this.groupBox2.Controls.Add(this.label3);
-            this.groupBox2.Controls.Add(this.checkBox1);
-            this.groupBox2.Location = new System.Drawing.Point(1116, 63);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(456, 607);
-            this.groupBox2.TabIndex = 4;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Times New Roman", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(184, 37);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(71, 15);
-            this.label5.TabIndex = 4;
-            this.label5.Text = "TASK LIST";
-            // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.Color.MistyRose;
-            this.button2.Location = new System.Drawing.Point(26, 444);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(285, 43);
-            this.button2.TabIndex = 5;
-            this.button2.Text = "ADD ITEM";
-            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.UseVisualStyleBackColor = false;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(22, 326);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(116, 19);
-            this.label4.TabIndex = 4;
-            this.label4.Text = "COMPLETED";
-            // 
-            // checkBox3
-            // 
-            this.checkBox3.AutoSize = true;
-            this.checkBox3.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox3.Location = new System.Drawing.Point(26, 194);
-            this.checkBox3.Margin = new System.Windows.Forms.Padding(7);
-            this.checkBox3.Name = "checkBox3";
-            this.checkBox3.Padding = new System.Windows.Forms.Padding(10);
-            this.checkBox3.Size = new System.Drawing.Size(229, 49);
-            this.checkBox3.TabIndex = 3;
-            this.checkBox3.Text = "Make assignment";
-            this.checkBox3.UseVisualStyleBackColor = true;
-            // 
-            // checkBox2
-            // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox2.Location = new System.Drawing.Point(26, 152);
-            this.checkBox2.Margin = new System.Windows.Forms.Padding(7);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Padding = new System.Windows.Forms.Padding(10);
-            this.checkBox2.Size = new System.Drawing.Size(229, 49);
-            this.checkBox2.TabIndex = 2;
-            this.checkBox2.Text = "Make assignment";
-            this.checkBox2.UseVisualStyleBackColor = true;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(22, 85);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(61, 19);
-            this.label3.TabIndex = 1;
-            this.label3.Text = "TO DO";
-            // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox1.Location = new System.Drawing.Point(26, 107);
-            this.checkBox1.Margin = new System.Windows.Forms.Padding(7);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Padding = new System.Windows.Forms.Padding(10);
-            this.checkBox1.Size = new System.Drawing.Size(229, 49);
-            this.checkBox1.TabIndex = 0;
-            this.checkBox1.Text = "Make assignment";
-            this.checkBox1.UseVisualStyleBackColor = true;
-            // 
             // timer1
             // 
             this.timer1.Interval = 1000;
@@ -248,17 +142,15 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Info;
             this.ClientSize = new System.Drawing.Size(1902, 1153);
-            this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Name = "Form3";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form3";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.Form3_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -270,14 +162,6 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.CheckBox checkBox3;
-        private System.Windows.Forms.CheckBox checkBox2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Button button4;
