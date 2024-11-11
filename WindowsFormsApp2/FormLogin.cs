@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,28 +8,76 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MySql.Data;
+using MySql.Data.MySqlClient;
 
 namespace WindowsFormsApp2
 {
     public partial class FormLogin : Form
     {
+        private MySqlConnection koneksi;
+        private MySqlDataAdapter adapter;
+        private MySqlCommand perintah;
+
+        private DataSet ds = new DataSet();
+        private string alamat, query;
+
         public FormLogin()
         {
+            alamat = "server=localhost; database=pomodoro_apk; username=root; password=;";
+            koneksi = new MySqlConnection(alamat);
             InitializeComponent();
         }
 
-        private void btnLogin_Click(object sender, EventArgs e)
-        {
-            // Membuka Form Pomodoro setelah login
-            pomodoro pomodoroForm = new pomodoro();
-            this.Hide(); // Menyembunyikan FormLogin setelah login
-            pomodoroForm.ShowDialog(); // Menampilkan Form Pomodoro
-            this.Close(); // Menutup FormLogin setelah Form Pomodoro ditutup
-        }
-
+        // FormLogin_Load method placed inside FormLogin class
         private void FormLogin_Load(object sender, EventArgs e)
         {
+            // Code to initialize form, if needed
+        }
 
+        // btnLogin_Click method placed inside FormLogin class
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                query = string.Format("select * from Login where username = '{0}'", txtUsername.Text);
+                ds.Clear();
+                koneksi.Open();
+                perintah = new MySqlCommand(query, koneksi);
+                adapter = new MySqlDataAdapter(perintah);
+                perintah.ExecuteNonQuery();
+                adapter.Fill(ds);
+                koneksi.Close();
+                if (ds.Tables[0].Rows.Count > 0)
+                {
+                    foreach (DataRow kolom in ds.Tables[0].Rows)
+                    {
+                        string sandi;
+                        sandi = kolom["password"].ToString();
+                        if (sandi == txtPassword.Text)
+                        {
+                            pomodoro pomodoroForm = new pomodoro();
+                            this.Hide();
+                            pomodoroForm.ShowDialog(); // Menampilkan Form Pomodoro
+                            this.Close();
+
+                        }
+                        else
+                        {
+                            MessageBox.Show("Anda salah input password");
+                        }
+                    }
+
+                }
+                else
+                {
+                    MessageBox.Show("Username tidak ditemukan");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
         }
     }
 }
