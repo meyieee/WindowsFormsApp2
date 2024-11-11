@@ -35,12 +35,26 @@ namespace WindowsFormsApp2
             // Code to initialize form, if needed
         }
 
-        // btnLogin_Click method placed inside FormLogin class
+        private void label3_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void btnRegister_Click(object sender, EventArgs e)
+        {
+            // Open the registration form
+            Form4 registerForm = new Form4();
+            registerForm.FormClosed += (s, args) => this.Show(); // Show login form when registration form is closed
+            this.Hide(); // Hide the current login form
+            registerForm.Show(); //
+        }
+
+        // btnLogin_Click method placed inside FormLogin cl
         private void btnLogin_Click(object sender, EventArgs e)
         {
             try
             {
-                query = string.Format("select * from Login where username = '{0}'", txtUsername.Text);
+                query = string.Format("select * from register where username = '{0}'", txtUsername.Text);
                 ds.Clear();
                 koneksi.Open();
                 perintah = new MySqlCommand(query, koneksi);

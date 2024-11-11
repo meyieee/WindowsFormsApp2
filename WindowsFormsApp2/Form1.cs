@@ -7,11 +7,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
 
 namespace WindowsFormsApp2
 {
     public partial class pomodoro : Form
     {
+        private MySqlConnection koneksi;
+        private MySqlDataAdapter adapter;
+        private MySqlCommand perintah;
+
+        private DataSet ds = new DataSet();
+        private string alamat, query;
+        private string connectionString = "server=localhost;database=pomodoro_apk;username=root;password=;";
         private int seconds;
 
         public pomodoro()
@@ -80,12 +88,7 @@ namespace WindowsFormsApp2
 
         private void pomodoro_Load(object sender, EventArgs e)
         {
-            //Create columns
-            todoList.Columns.Add("Title");
-            todoList.Columns.Add("Description");
-
-            todolistView.DataSource = todoList;
-
+            RefreshDataGridView(); // Muat data saat form di-load
         }
 
         private void button1_Click_1(object sender, EventArgs e)
@@ -109,68 +112,126 @@ namespace WindowsFormsApp2
         }
 
         private void newButton_Click(object sender, EventArgs e)
-        {
-            titleText.Text = "";
-            descriptionText.Text = "";
+        {// Kosongkan input untuk Title dan Description
+            titleText.Text = string.Empty;
+            descriptionText.Text = string.Empty;
+
+            // Fokus ke input Title untuk mempermudah pengguna
+            titleText.Focus();
+
+            isEditing = false; // Menandakan ini adalah mode 'Tambah Baru'
 
         }
+
 
         private void Editbutton_Click(object sender, EventArgs e)
         {
-            isEditing = true;
-            // Mengambil data dari baris yang dipilih untuk Title dan Description
-            titleText.Text = todoList.Rows[todolistView.CurrentCell.RowIndex]["Title"].ToString();
-            descriptionText.Text = todoList.Rows[todolistView.CurrentCell.RowIndex]["Description"].ToString();
+            if (todolistView.CurrentRow == null)
+            {
+                MessageBox.Show("Please select a task to edit.", "Edit Task");
+                return;
+            }
+
+            titleText.Text = todolistView.CurrentRow.Cells["title"].Value.ToString();
+            descriptionText.Text = todolistView.CurrentRow.Cells["description"].Value.ToString();
+            isEditing = true; // Aktifkan mode Edit
         }
+
 
         private void Deletebtn_Click(object sender, EventArgs e)
         {
-            try
-            {
-                todoList.Rows[todolistView.CurrentCell.RowIndex].Delete();
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("Error: " + ex);
-            }
+            if (todolistView.CurrentRow == null) return;
 
-
+            using (MySqlConnection conn = new MySqlConnection(connectionString))
+            {
+                conn.Open();
+                string query = "DELETE FROM tasks WHERE id_task=@id";
+                using (MySqlCommand cmd = new MySqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@id", todolistView.CurrentRow.Cells["id_task"].Value);
+                    cmd.ExecuteNonQuery();
+                }
+            }
+            MessageBox.Show("Task deleted successfully!");
+            RefreshDataGridView();
         }
+
 
         private void Savebtn_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(titleText.Text) || string.IsNullOrWhiteSpace(descriptionText.Text))
             {
-                MessageBox.Show("Both Title and Description are required.", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Title and Description cannot be empty.", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-
-            if (isEditing)
+            try
             {
-                // Update baris yang sedang diedit
-                todoList.Rows[todolistView.CurrentCell.RowIndex]["Title"] = titleText.Text;
-                todoList.Rows[todolistView.CurrentCell.RowIndex]["Description"] = descriptionText.Text;
+                using (MySqlConnection conn = new MySqlConnection(connectionString))
+                {
+                    conn.Open();
+                    if (isEditing)
+                    {
+                        // Mode Edit: Update data berdasarkan id_task
+                        string query = "UPDATE tasks SET title=@title, description=@description WHERE id_task=@id";
+                        using (MySqlCommand cmd = new MySqlCommand(query, conn))
+                        {
+                            cmd.Parameters.AddWithValue("@title", titleText.Text);
+                            cmd.Parameters.AddWithValue("@description", descriptionText.Text);
+                            cmd.Parameters.AddWithValue("@id", todolistView.CurrentRow.Cells["id_task"].Value);
+                            cmd.ExecuteNonQuery();
+                        }
+                        MessageBox.Show("Task updated successfully!");
+                    }
+                    else
+                    {
+                        // Mode Tambah Baru: Insert data baru ke database
+                        string query = "INSERT INTO tasks (title, description) VALUES (@title, @description)";
+                        using (MySqlCommand cmd = new MySqlCommand(query, conn))
+                        {
+                            cmd.Parameters.AddWithValue("@title", titleText.Text);
+                            cmd.Parameters.AddWithValue("@description", descriptionText.Text);
+                            cmd.ExecuteNonQuery();
+                        }
+                        MessageBox.Show("Task added successfully!");
+                    }
+                }
+
+                // Kosongkan input setelah menyimpan
+                titleText.Text = string.Empty;
+                descriptionText.Text = string.Empty;
+                isEditing = false; // Reset mode ke 'Tambah Baru'
+                RefreshDataGridView();
             }
-            else
+            catch (Exception ex)
             {
-                // Tambahkan baris baru ke DataTable
-                todoList.Rows.Add(titleText.Text, descriptionText.Text);
+                MessageBox.Show("Error saving task: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
-            // Reset text fields
-            titleText.Text = "";
-            descriptionText.Text = "";
-            isEditing = false;
-
-            RefreshDataGridView();
         }
+
 
         private void RefreshDataGridView()
         {
-            todolistView.DataSource = null; // Hapus DataSource sementara
-            todolistView.DataSource = todoList; // Set ulang DataSource
+            try
+            {
+                using (MySqlConnection conn = new MySqlConnection(connectionString))
+                {
+                    conn.Open();
+                    string query = "SELECT * FROM tasks";
+                    using (MySqlDataAdapter adapter = new MySqlDataAdapter(query, conn))
+                    {
+                        DataTable dt = new DataTable();
+                        adapter.Fill(dt);
+                        todolistView.DataSource = dt; // Bind ulang data dari database
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error refreshing data: " + ex.Message);
+            }
         }
+
 
 
     }

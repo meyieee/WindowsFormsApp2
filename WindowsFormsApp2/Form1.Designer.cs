@@ -44,10 +44,10 @@
             this.Deletebtn = new System.Windows.Forms.Button();
             this.Editbutton = new System.Windows.Forms.Button();
             this.newButton = new System.Windows.Forms.Button();
-            this.titleText = new System.Windows.Forms.Label();
-            this.descriptionText = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label = new System.Windows.Forms.Label();
+            this.labeldesk = new System.Windows.Forms.Label();
+            this.descriptionText = new System.Windows.Forms.TextBox();
+            this.titleText = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -162,10 +162,10 @@
             this.groupBox3.Controls.Add(this.Deletebtn);
             this.groupBox3.Controls.Add(this.Editbutton);
             this.groupBox3.Controls.Add(this.newButton);
-            this.groupBox3.Controls.Add(this.titleText);
+            this.groupBox3.Controls.Add(this.label);
+            this.groupBox3.Controls.Add(this.labeldesk);
             this.groupBox3.Controls.Add(this.descriptionText);
-            this.groupBox3.Controls.Add(this.textBox2);
-            this.groupBox3.Controls.Add(this.textBox1);
+            this.groupBox3.Controls.Add(this.titleText);
             this.groupBox3.Controls.Add(this.label6);
             this.groupBox3.Controls.Add(this.label7);
             this.groupBox3.Controls.Add(this.label8);
@@ -231,37 +231,37 @@
             this.newButton.UseVisualStyleBackColor = false;
             this.newButton.Click += new System.EventHandler(this.newButton_Click);
             // 
-            // titleText
+            // label
             // 
-            this.titleText.Font = new System.Drawing.Font("Leelawadee", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.titleText.Location = new System.Drawing.Point(7, 126);
-            this.titleText.Name = "titleText";
-            this.titleText.Size = new System.Drawing.Size(519, 23);
-            this.titleText.TabIndex = 8;
-            this.titleText.Text = "TITLE:";
+            this.label.Font = new System.Drawing.Font("Leelawadee", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label.Location = new System.Drawing.Point(7, 126);
+            this.label.Name = "label";
+            this.label.Size = new System.Drawing.Size(519, 23);
+            this.label.TabIndex = 8;
+            this.label.Text = "TITLE:";
+            // 
+            // labeldesk
+            // 
+            this.labeldesk.Font = new System.Drawing.Font("Leelawadee", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labeldesk.Location = new System.Drawing.Point(7, 186);
+            this.labeldesk.Name = "labeldesk";
+            this.labeldesk.Size = new System.Drawing.Size(525, 27);
+            this.labeldesk.TabIndex = 7;
+            this.labeldesk.Text = "DESCRIPTION:";
             // 
             // descriptionText
             // 
-            this.descriptionText.Font = new System.Drawing.Font("Leelawadee", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.descriptionText.Location = new System.Drawing.Point(7, 186);
+            this.descriptionText.Location = new System.Drawing.Point(6, 216);
             this.descriptionText.Name = "descriptionText";
-            this.descriptionText.Size = new System.Drawing.Size(525, 27);
-            this.descriptionText.TabIndex = 7;
-            this.descriptionText.Text = "DESCRIPTION:";
+            this.descriptionText.Size = new System.Drawing.Size(516, 22);
+            this.descriptionText.TabIndex = 6;
             // 
-            // textBox2
+            // titleText
             // 
-            this.textBox2.Location = new System.Drawing.Point(6, 216);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(516, 22);
-            this.textBox2.TabIndex = 6;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(6, 152);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(516, 22);
-            this.textBox1.TabIndex = 5;
+            this.titleText.Location = new System.Drawing.Point(6, 152);
+            this.titleText.Name = "titleText";
+            this.titleText.Size = new System.Drawing.Size(516, 22);
+            this.titleText.TabIndex = 5;
             // 
             // label6
             // 
@@ -330,10 +330,10 @@
         private System.Windows.Forms.Button Deletebtn;
         private System.Windows.Forms.Button Editbutton;
         private System.Windows.Forms.Button newButton;
-        private System.Windows.Forms.Label titleText;
-        private System.Windows.Forms.Label descriptionText;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label;
+        private System.Windows.Forms.Label labeldesk;
+        private System.Windows.Forms.TextBox descriptionText;
+        private System.Windows.Forms.TextBox titleText;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
