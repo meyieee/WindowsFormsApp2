@@ -13,12 +13,7 @@ namespace WindowsFormsApp2
 {
     public partial class pomodoro : Form
     {
-        private MySqlConnection koneksi;
-        private MySqlDataAdapter adapter;
-        private MySqlCommand perintah;
-
         private DataSet ds = new DataSet();
-        private string alamat, query;
         private string connectionString = "server=localhost;database=pomodoro_apk;username=root;password=;";
         private int seconds;
 
@@ -232,7 +227,11 @@ namespace WindowsFormsApp2
             }
         }
 
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            FormLogin logout = new FormLogin();
+            logout.Show();
 
-
+        }
     }
 }

@@ -51,6 +51,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
+            this.btnLogout = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox3.SuspendLayout();
@@ -60,6 +61,7 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.groupBox1.Controls.Add(this.btnLogout);
             this.groupBox1.Controls.Add(this.button5);
             this.groupBox1.Controls.Add(this.button4);
             this.groupBox1.Controls.Add(this.btnStop);
@@ -292,6 +294,17 @@
             this.label8.Text = "TO DO";
             this.label8.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
+            // btnLogout
+            // 
+            this.btnLogout.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnLogout.Location = new System.Drawing.Point(40, 767);
+            this.btnLogout.Name = "btnLogout";
+            this.btnLogout.Size = new System.Drawing.Size(142, 44);
+            this.btnLogout.TabIndex = 8;
+            this.btnLogout.Text = "LOGOUT";
+            this.btnLogout.UseVisualStyleBackColor = false;
+            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
+            // 
             // pomodoro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -337,6 +350,7 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Button btnLogout;
     }
 }
 

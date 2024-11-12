@@ -15,8 +15,7 @@ namespace WindowsFormsApp2
 {
     public partial class Form4 : Form
     {
-        private MySqlDataAdapter adapter;
-        private MySqlCommand perintah;
+        
         private MySqlConnection koneksi;
         private string alamat, query;
         public Form4()

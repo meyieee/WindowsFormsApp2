@@ -104,5 +104,23 @@ namespace WindowsFormsApp2
                 ;
 
             }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Form2 shortBreakForm = new Form2();
+            // Menampilkan Form2 sebagai form baru
+            shortBreakForm.Show();
         }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            pomodoro pomodoro = new pomodoro();
+            pomodoro.Show();
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+    }
     }

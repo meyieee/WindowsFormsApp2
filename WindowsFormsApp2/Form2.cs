@@ -69,17 +69,19 @@ namespace WindowsFormsApp2
 
         private void button4_Click(object sender, EventArgs e)
         {
-
+            Form3 longBreakForm = new Form3();
+            longBreakForm.Show();
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
-
+            pomodoro pomodoro = new pomodoro();
+            pomodoro.Show();
         }
-
         private void Form2_Load(object sender, EventArgs e)
         {
-
+            // method implementation
         }
+
     }
 }

@@ -54,9 +54,10 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(687, 60);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(456, 607);
+            this.groupBox1.Size = new System.Drawing.Size(456, 838);
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // button5
             // 
@@ -67,6 +68,7 @@
             this.button5.TabIndex = 7;
             this.button5.Text = "POMODORO";
             this.button5.UseVisualStyleBackColor = false;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // button4
             // 
@@ -77,6 +79,7 @@
             this.button4.TabIndex = 6;
             this.button4.Text = "SHORT BREAK";
             this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button3
             // 
