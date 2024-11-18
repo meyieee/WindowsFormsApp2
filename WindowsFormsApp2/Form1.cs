@@ -233,5 +233,16 @@ namespace WindowsFormsApp2
             logout.Show();
 
         }
+
+        private void btnPrint_Click(object sender, EventArgs e)
+        {
+            FormReport formReport = new FormReport();
+            formReport.Show();
+        }
+
+        private void todolistView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

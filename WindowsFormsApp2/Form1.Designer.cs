@@ -30,11 +30,11 @@
         {
             this.components = new System.ComponentModel.Container();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnLogout = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.btnStop = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnStart = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
@@ -51,16 +51,20 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.btnLogout = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnPrint = new System.Windows.Forms.Button();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.todolistView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.groupBox1.Controls.Add(this.pictureBox2);
             this.groupBox1.Controls.Add(this.btnLogout);
             this.groupBox1.Controls.Add(this.button5);
             this.groupBox1.Controls.Add(this.button4);
@@ -75,6 +79,17 @@
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
+            // btnLogout
+            // 
+            this.btnLogout.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnLogout.Location = new System.Drawing.Point(40, 767);
+            this.btnLogout.Name = "btnLogout";
+            this.btnLogout.Size = new System.Drawing.Size(142, 44);
+            this.btnLogout.TabIndex = 8;
+            this.btnLogout.Text = "LOGOUT";
+            this.btnLogout.UseVisualStyleBackColor = false;
+            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
             // button5
             // 
@@ -120,16 +135,6 @@
             this.label2.Text = "POMODORO";
             this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::WindowsFormsApp2.Properties.Resources.alarm_clock_3914623;
-            this.pictureBox1.Location = new System.Drawing.Point(18, 249);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(52, 50);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 2;
-            this.pictureBox1.TabStop = false;
-            // 
             // btnStart
             // 
             this.btnStart.BackColor = System.Drawing.Color.PeachPuff;
@@ -159,6 +164,7 @@
             // groupBox3
             // 
             this.groupBox3.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.groupBox3.Controls.Add(this.btnPrint);
             this.groupBox3.Controls.Add(this.todolistView);
             this.groupBox3.Controls.Add(this.Savebtn);
             this.groupBox3.Controls.Add(this.Deletebtn);
@@ -188,13 +194,14 @@
             this.todolistView.RowTemplate.Height = 24;
             this.todolistView.Size = new System.Drawing.Size(545, 506);
             this.todolistView.TabIndex = 13;
+            this.todolistView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.todolistView_CellContentClick);
             // 
             // Savebtn
             // 
             this.Savebtn.BackColor = System.Drawing.Color.PeachPuff;
-            this.Savebtn.Location = new System.Drawing.Point(418, 249);
+            this.Savebtn.Location = new System.Drawing.Point(326, 251);
             this.Savebtn.Name = "Savebtn";
-            this.Savebtn.Size = new System.Drawing.Size(133, 50);
+            this.Savebtn.Size = new System.Drawing.Size(96, 50);
             this.Savebtn.TabIndex = 12;
             this.Savebtn.Text = "Save";
             this.Savebtn.UseVisualStyleBackColor = false;
@@ -203,9 +210,9 @@
             // Deletebtn
             // 
             this.Deletebtn.BackColor = System.Drawing.Color.PeachPuff;
-            this.Deletebtn.Location = new System.Drawing.Point(279, 249);
+            this.Deletebtn.Location = new System.Drawing.Point(233, 251);
             this.Deletebtn.Name = "Deletebtn";
-            this.Deletebtn.Size = new System.Drawing.Size(133, 50);
+            this.Deletebtn.Size = new System.Drawing.Size(87, 50);
             this.Deletebtn.TabIndex = 11;
             this.Deletebtn.Text = "Delete\r\n";
             this.Deletebtn.UseVisualStyleBackColor = false;
@@ -214,9 +221,9 @@
             // Editbutton
             // 
             this.Editbutton.BackColor = System.Drawing.Color.PeachPuff;
-            this.Editbutton.Location = new System.Drawing.Point(145, 249);
+            this.Editbutton.Location = new System.Drawing.Point(135, 251);
             this.Editbutton.Name = "Editbutton";
-            this.Editbutton.Size = new System.Drawing.Size(133, 50);
+            this.Editbutton.Size = new System.Drawing.Size(82, 50);
             this.Editbutton.TabIndex = 10;
             this.Editbutton.Text = "Edit";
             this.Editbutton.UseVisualStyleBackColor = false;
@@ -225,9 +232,9 @@
             // newButton
             // 
             this.newButton.BackColor = System.Drawing.Color.PeachPuff;
-            this.newButton.Location = new System.Drawing.Point(6, 249);
+            this.newButton.Location = new System.Drawing.Point(42, 250);
             this.newButton.Name = "newButton";
-            this.newButton.Size = new System.Drawing.Size(133, 50);
+            this.newButton.Size = new System.Drawing.Size(81, 50);
             this.newButton.TabIndex = 9;
             this.newButton.Text = "New";
             this.newButton.UseVisualStyleBackColor = false;
@@ -294,16 +301,37 @@
             this.label8.Text = "TO DO";
             this.label8.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // btnLogout
+            // pictureBox1
             // 
-            this.btnLogout.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.btnLogout.Location = new System.Drawing.Point(40, 767);
-            this.btnLogout.Name = "btnLogout";
-            this.btnLogout.Size = new System.Drawing.Size(142, 44);
-            this.btnLogout.TabIndex = 8;
-            this.btnLogout.Text = "LOGOUT";
-            this.btnLogout.UseVisualStyleBackColor = false;
-            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
+            this.pictureBox1.Image = global::WindowsFormsApp2.Properties.Resources.alarm_clock_3914623;
+            this.pictureBox1.Location = new System.Drawing.Point(18, 249);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(52, 50);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 2;
+            this.pictureBox1.TabStop = false;
+            // 
+            // btnPrint
+            // 
+            this.btnPrint.BackColor = System.Drawing.Color.PeachPuff;
+            this.btnPrint.Location = new System.Drawing.Point(428, 251);
+            this.btnPrint.Name = "btnPrint";
+            this.btnPrint.Size = new System.Drawing.Size(94, 49);
+            this.btnPrint.TabIndex = 14;
+            this.btnPrint.Text = "Print";
+            this.btnPrint.UseVisualStyleBackColor = false;
+            this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::WindowsFormsApp2.Properties.Resources.pngegg;
+            this.pictureBox2.Location = new System.Drawing.Point(268, 20);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(76, 53);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 15;
+            this.pictureBox2.TabStop = false;
             // 
             // pomodoro
             // 
@@ -319,10 +347,11 @@
             this.Load += new System.EventHandler(this.pomodoro_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.todolistView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -351,6 +380,8 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button btnLogout;
+        internal System.Windows.Forms.Button btnPrint;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }
 
